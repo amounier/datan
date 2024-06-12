@@ -1,0 +1,10 @@
+name: datan_env
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - pandas
+  - matplotlib
+  - tqdm
+  - jupyter
+  - numpy
