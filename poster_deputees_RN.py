@@ -26,6 +26,9 @@ background_color = np.array([0.075, 0.075, 0.3])  # Dark blue
 fig_width = 8
 fig_height = 8
 
+x_pos_text = 0.05
+x_pos_cicles = 0.8
+
 big_title = "Mon député RN,\n cette année c'était...".upper()
 # font_props = {'family': 'monospace', 'style': 'italic', 'weight': 'bold'}
 # Load the "Trial Bold" font
@@ -56,11 +59,23 @@ for deputy_id, deputy_name, deputy_const in zip(first_2_deputy_ids, first_2_depu
 
     # Add the big title
     big_title_André = unidecode(f"M. {deputy_name}\n député\n {deputy_const} a voté".upper())
-    fig.suptitle(big_title_André, fontsize=50, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.92)
+    fig.suptitle(big_title_André, fontsize=50, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.88)
 
     # Plot the image
     ax.imshow(image_array.astype(np.uint8),alpha=.55)
     # ax.set_title(f"Deputy ID: {deputy_id}", fontsize=16)
+    # Add new lines of text
+    nb_votes = 5
+    ax.text(x_pos_text, nb_votes*0.1, "Blablablablablabla".upper(), fontsize=32, color="white", transform=ax.transAxes, fontproperties=trial_bold_font)
+    ax.scatter(x_pos_cicles, nb_votes*0.1+0.02, s=1800, c="green", marker="o", transform=ax.transAxes, linewidths=1, edgecolors="white")
+    ax.text(x_pos_text, nb_votes*0.1-0.1, "Blablablablablabla".upper(), fontsize=32, color="white", transform=ax.transAxes, fontproperties=trial_bold_font)
+    ax.scatter(x_pos_cicles, nb_votes*0.1-0.1+0.02, s=1800, c="green", marker="o", transform=ax.transAxes, linewidths=1, edgecolors="white")
+    ax.text(x_pos_text, nb_votes*0.1-0.2, "Blablablablablabla".upper(), fontsize=32, color="white", transform=ax.transAxes, fontproperties=trial_bold_font)
+    ax.scatter(x_pos_cicles, nb_votes*0.1-0.2+0.02, s=1800, c="green", marker="o", transform=ax.transAxes, linewidths=1, edgecolors="white")
+    ax.text(x_pos_text, nb_votes*0.1-0.3, "Blablablablablabla".upper(), fontsize=32, color="white", transform=ax.transAxes, fontproperties=trial_bold_font)
+    ax.scatter(x_pos_cicles, nb_votes*0.1-0.3+0.02, s=1800, c="green", marker="o", transform=ax.transAxes, linewidths=1, edgecolors="white")
+    ax.text(x_pos_text, nb_votes*0.1-0.4, "Blablablablablabla".upper(), fontsize=32, color="white", transform=ax.transAxes, fontproperties=trial_bold_font)
+    ax.scatter(x_pos_cicles, nb_votes*0.1-0.4+0.02, s=1800, c="green", marker="o", transform=ax.transAxes, linewidths=1, edgecolors="white")
     ax.axis("off")
 
     # Save the image
