@@ -20,7 +20,7 @@ first_2_deputy_names = deputy_names[:2]
 first_2_deputy_const = deputy_constituency[:2]
 
 # Set the background color (RGB values)
-background_color = np.array([0.075, 0.075, 0.3])  # Dark blue
+background_color = np.array([0.01, 0.01, 0.25])  # Dark blue
 
 # Set the figure size
 fig_width = 8
@@ -59,7 +59,7 @@ for deputy_id, deputy_name, deputy_const in zip(first_2_deputy_ids, first_2_depu
 
     # Add the big title
     big_title_André = unidecode(f"M. {deputy_name}\n député\n {deputy_const} a voté".upper())
-    fig.suptitle(big_title_André, fontsize=50, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.88)
+    fig.suptitle(big_title_André, fontsize=46, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.88)
 
     # Plot the image
     ax.imshow(image_array.astype(np.uint8),alpha=.55)
