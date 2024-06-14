@@ -1,15 +1,22 @@
+# -*- coding: utf-8 -*-
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
+from matplotlib import font_manager
 
 # Read the CSV file into a pandas DataFrame
 df = pd.read_csv("output/RN_deputees_information.csv")
 
 # Get the list of deputy IDs
 deputy_ids = df["Deputy ID"].tolist()
-first_2_deputees = deputy_ids[:2]
+deputy_names = df["Name"].tolist()
+deputy_constituency = df["Constituency"].tolist()
+first_2_deputy_ids = deputy_ids[:2]
+first_2_deputy_names = deputy_names[:2]
+first_2_deputy_const = deputy_constituency[:2]
 
 # Set the background color (RGB values)
 background_color = np.array([0.075, 0.075, 0.3])  # Dark blue
@@ -18,8 +25,13 @@ background_color = np.array([0.075, 0.075, 0.3])  # Dark blue
 fig_width = 8
 fig_height = 8
 
+big_title = "Mon député RN,\n cette année c'était...".upper()
+# font_props = {'family': 'monospace', 'style': 'italic', 'weight': 'bold'}
+# Load the "Trial Bold" font
+trial_bold_font = font_manager.FontProperties(fname="fonts/Font-Trial-Bold.otf")
+
 # Iterate over the deputy IDs
-for deputy_id in first_2_deputees:
+for deputy_id, deputy_name, deputy_const in zip(first_2_deputy_ids, first_2_deputy_names, first_2_deputy_const):
     # Load the image
     image_path = os.path.join("output/RN_deputees_img", f"{deputy_id}.png")
     image = Image.open(image_path).convert("RGBA")
@@ -40,6 +52,10 @@ for deputy_id in first_2_deputees:
 
     # Create a new figure
     fig, ax = plt.subplots(figsize=(fig_width, fig_height), facecolor=background_color)
+
+    # Add the big title
+    big_title_André = f"M. {deputy_name},\n député des\n {deputy_const} a voté:".upper()
+    fig.suptitle(big_title_André, fontsize=52, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.92)
 
     # Plot the image
     ax.imshow(image_array.astype(np.uint8),alpha=.55)
