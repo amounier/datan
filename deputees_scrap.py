@@ -30,9 +30,10 @@ for element in elements:
     party = element.find("div", class_="card-footer").text.strip()
     img_element = element.find("img", class_="img-lazy")
     img_link = img_element.get("data-src") if img_element else ""
+    deputy_id = img_link.split("/")[-1].split("_")[-1].split(".")[0]
 
     # Append the extracted data to the list
-    data.append({"Name": name, "Constituency": constituency, "Party": party, "Image Link": img_link})
+    data.append({"Name": name, "Constituency": constituency, "Party": party, "Image Link": img_link, "Deputy ID": deputy_id})
 
 # Create a pandas DataFrame from the list of dictionaries
 df = pd.DataFrame(data)
