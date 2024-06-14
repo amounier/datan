@@ -39,4 +39,4 @@ for element in elements:
 df = pd.DataFrame(data)
 
 # Save the DataFrame to a CSV file
-df.to_csv("output/scraped_data.csv", index=False, encoding="utf-8")
+df.to_csv("output/deputees_information.csv", index=False, encoding="utf-8")
