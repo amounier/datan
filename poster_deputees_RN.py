@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 from matplotlib import font_manager
+from unidecode import unidecode
 
 # Read the CSV file into a pandas DataFrame
 df = pd.read_csv("output/RN_deputees_information.csv")
@@ -13,7 +14,7 @@ df = pd.read_csv("output/RN_deputees_information.csv")
 # Get the list of deputy IDs
 deputy_ids = df["Deputy ID"].tolist()
 deputy_names = df["Name"].tolist()
-deputy_constituency = df["Constituency"].tolist()
+deputy_constituency = df["Constituency_no_code"].tolist()
 first_2_deputy_ids = deputy_ids[:2]
 first_2_deputy_names = deputy_names[:2]
 first_2_deputy_const = deputy_constituency[:2]
@@ -54,8 +55,8 @@ for deputy_id, deputy_name, deputy_const in zip(first_2_deputy_ids, first_2_depu
     fig, ax = plt.subplots(figsize=(fig_width, fig_height), facecolor=background_color)
 
     # Add the big title
-    big_title_André = f"M. {deputy_name},\n député des\n {deputy_const} a voté:".upper()
-    fig.suptitle(big_title_André, fontsize=52, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.92)
+    big_title_André = unidecode(f"M. {deputy_name}\n député\n {deputy_const} a voté".upper())
+    fig.suptitle(big_title_André, fontsize=50, fontweight='bold', color='white', fontproperties=trial_bold_font, y=0.92)
 
     # Plot the image
     ax.imshow(image_array.astype(np.uint8),alpha=.55)
