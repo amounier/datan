@@ -21,12 +21,12 @@ st.title("Contact des députés en 3ème position des triangulaires")
 # Load the CSV file
 csv_file = "output/votes_T1/non_desistements.csv" # input/target_deputees.csv"
 df = pd.read_csv(csv_file)
-columns_to_keep = ["Candidats", "groupe_nuance", "Contact"] #"reg", "dep", "circo", "groupe_nuance","Contact"]
+columns_to_keep = ["Candidats", "Nuance", "Contact"] #"reg", "dep", "circo", "groupe_nuance","Contact"]
 df = df[columns_to_keep]
 # df["groupe_nuance"] = df["groupe_nuance"].upper()
 
 # Rename columns using the rename method
-df.rename(columns={'groupe_nuance': 'Groupe'}) #, 'Contact': 'Twitter Profile'}, inplace=True)
+df.rename(columns={'Nuance': 'Groupe'}) #, 'Contact': 'Twitter Profile'}, inplace=True)
 
 # Apply the function to the 'Profile' column
 # df['Contact'] = df['Contact'].apply(make_clickable)
