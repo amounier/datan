@@ -26,7 +26,9 @@ df = df[columns_to_keep]
 # df["groupe_nuance"] = df["groupe_nuance"].upper()
 
 # Apply the function to the 'Profile' column
-df['Contact'] = df['Contact'].apply(make_clickable)
+# df['Contact'] = df['Contact'].apply(make_clickable)
+df['Contact'] = df['Contact'].apply(lambda x: make_clickable(x) if pd.notnull(x) and x.startswith('http') else '')
+
 
 # Display the counter
 row_count = len(df)
