@@ -37,6 +37,14 @@ df['Contact'] = df['Contact'].apply(lambda x: make_clickable(x) if pd.notnull(x)
 row_count = len(df)
 st.subheader(f"Triangulaires restantes: {row_count}")
 
+st.subheader(f"Visuels scénarios de désistements")
+st.image("output/votes_T2_projections/S1_cut.png")
+st.image("output/votes_T2_projections/S2_cut.png")
+st.image("output/votes_T2_projections/S3_cut.png")
+st.image("output/votes_T2_projections/S4_cut.png")
+st.image("output/votes_T2_projections/S5_cut.png")
+
+
 # # Display the multiselect widget for filtering by column values
 # filter_columns = st.multiselect("Select columns to filter by", df.columns.tolist())
 
@@ -81,4 +89,5 @@ st.subheader(f"Triangulaires restantes: {row_count}")
 # # Display the table
 # st.table(df)
 # Display the table using st.markdown with unsafe_allow_html=True
+st.subheader(f"Tableau contacts candidats")
 st.markdown(df.to_html(escape=False, index=False), unsafe_allow_html=True)
