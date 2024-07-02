@@ -9,7 +9,8 @@ def make_clickable(link):
 # Title of the app
 st.title("Contact des députés non désistés en 3ème position des triangulaires")
 
-st.markdown("Méthode: les scénarios de désistements sont à stratégies de reports d’[enquêtes sur les législatives de 2022](https://harris-interactive.fr/wp-content/uploads/sites/6/2022/06/Harris-x-Toluna-pour-M6-et-RTL-Jour-du-vote-au-2nd-tour-des-elections-legislatives-2022.pdf).")
+st.markdown("**Méthode**: les scénarios de désistements sont à stratégies de reports d’[enquêtes sur les législatives de 2022](https://harris-interactive.fr/wp-content/uploads/sites/6/2022/06/Harris-x-Toluna-pour-M6-et-RTL-Jour-du-vote-au-2nd-tour-des-elections-legislatives-2022.pdf).")
+st.markdown("**Code**: [GitHub](https://github.com/amounier/datan).")
 
 # # Data for the table
 # data = {
