@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from st_aggrid import AgGrid, GridOptionsBuilder
+# from st_aggrid import AgGrid, GridOptionsBuilder
 
 # Title of the app
 st.title("Contact des députés en 3ème position des triangulaires")
