@@ -12,3 +12,4 @@ dependencies:
   - openpyxl
   - geopandas
   - cartopy
+  - html5lib
