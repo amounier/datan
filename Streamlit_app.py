@@ -7,7 +7,7 @@ def make_clickable(link):
     return f'<a href="{link}" target="_blank">Twitter</a>'
 
 # Title of the app
-st.title("Contact des députés en 3ème position des triangulaires")
+st.title("Contact des députés non désistés en 3ème position des triangulaires")
 
 # # Data for the table
 # data = {
