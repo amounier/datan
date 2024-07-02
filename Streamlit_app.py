@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 # from st_aggrid import AgGrid, GridOptionsBuilder
 
+# Function to create clickable links
+def make_clickable(link):
+    return f'<a href="{link}" target="_blank">Twitter</a>'
+
 # Title of the app
 st.title("Contact des députés en 3ème position des triangulaires")
 
@@ -17,9 +21,12 @@ st.title("Contact des députés en 3ème position des triangulaires")
 # Load the CSV file
 csv_file = "output/votes_T1/non_desistements.csv" # input/target_deputees.csv"
 df = pd.read_csv(csv_file)
-columns_to_keep = ["Candidats", "reg", "dep", "circo", "groupe_nuance"]
+columns_to_keep = ["Candidats", "reg", "dep", "circo", "groupe_nuance","Contact"]
 df = df[columns_to_keep]
 # df["groupe_nuance"] = df["groupe_nuance"].upper()
+
+# Apply the function to the 'Profile' column
+df['Contact'] = df['Contact'].apply(make_clickable)
 
 # Display the counter
 row_count = len(df)
@@ -66,5 +73,7 @@ st.subheader(f"Triangulaires restantes: {row_count}")
 
 
 
-# Display the table
-st.table(df)
+# # Display the table
+# st.table(df)
+# Display the table using st.markdown with unsafe_allow_html=True
+st.markdown(df.to_html(escape=False, index=False), unsafe_allow_html=True)
