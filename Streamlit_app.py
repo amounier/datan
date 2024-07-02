@@ -9,6 +9,8 @@ def make_clickable(link):
 # Title of the app
 st.title("Contact des députés non désistés en 3ème position des triangulaires")
 
+st.markdown("Méthode: les scénarios de désistements sont à stratégies de reports d’[enquêtes sur les législatives de 2022](https://harris-interactive.fr/wp-content/uploads/sites/6/2022/06/Harris-x-Toluna-pour-M6-et-RTL-Jour-du-vote-au-2nd-tour-des-elections-legislatives-2022.pdf)")
+
 # # Data for the table
 # data = {
 #     "Column 1": ["Row 1", "Row 2", "Row 3"],
@@ -91,3 +93,4 @@ st.image("output/votes_T2_projections/S5_cut.png")
 # Display the table using st.markdown with unsafe_allow_html=True
 st.subheader(f"Tableau contacts candidats")
 st.markdown(df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
