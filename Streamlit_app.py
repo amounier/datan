@@ -40,31 +40,31 @@ st.subheader(f"Triangulaires restantes: {row_count}")
 # for col, values in filter_values.items():
 #     filtered_df = filtered_df[filtered_df[col].isin(values)]
 
-# Create GridOptionsBuilder from the dataframe
-gb = GridOptionsBuilder.from_dataframe(df)
+# # Create GridOptionsBuilder from the dataframe
+# gb = GridOptionsBuilder.from_dataframe(df)
 
-# Enable filtering in the grid
-gb.configure_default_column(filterable=True)
+# # Enable filtering in the grid
+# gb.configure_default_column(filterable=True)
 
-# Create the grid options
-gridOptions = gb.build()
+# # Create the grid options
+# gridOptions = gb.build()
 
-# Display the interactive grid with filtering
-grid_response = AgGrid(
-    df,
-    gridOptions=gridOptions,
-    enable_enterprise_modules=False,
-    theme='streamlit',
-    height=500,
-    width='100%',  # Adjust the width here
-    fit_columns_on_grid_load=True,
-    allow_unsafe_jscode=True,  # Set to True if you use JS functions in the grid options
-)
+# # Display the interactive grid with filtering
+# grid_response = AgGrid(
+#     df,
+#     gridOptions=gridOptions,
+#     enable_enterprise_modules=False,
+#     theme='streamlit',
+#     height=500,
+#     width='100%',  # Adjust the width here
+#     fit_columns_on_grid_load=True,
+#     allow_unsafe_jscode=True,  # Set to True if you use JS functions in the grid options
+# )
 
-# Get the filtered data
-filtered_df = pd.DataFrame(grid_response['data'])
+# # Get the filtered data
+# filtered_df = pd.DataFrame(grid_response['data'])
 
 
 
 # Display the table
-# st.table(filtered_df)
+st.table(df)
