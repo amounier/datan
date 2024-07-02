@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Title of the app
-st.title("Two Columns Table Example")
+st.title("Contact des députés ENS/LR en 3ème position des triangulaires")
 
 # # Data for the table
 # data = {
