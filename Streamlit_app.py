@@ -15,7 +15,7 @@ st.title("Contact des députés en 3ème position des triangulaires")
 # df = pd.DataFrame(data)
 
 # Load the CSV file
-csv_file = "output/votes_T1/results_votes_qualifs+3.csv" # input/target_deputees.csv"
+csv_file = "output/votes_T1/non_desistements.csv" # input/target_deputees.csv"
 df = pd.read_csv(csv_file)
 columns_to_keep = ["Candidats", "reg", "dep", "circo", "groupe_nuance"]
 df = df[columns_to_keep]
