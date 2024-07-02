@@ -17,5 +17,9 @@ st.title("Two Columns Table Example")
 csv_file = "input/target_deputees.csv"
 df = pd.read_csv(csv_file)
 
+# Display the counter
+row_count = len(df)
+st.subheader(f"Triangulaires restantes: {row_count}")
+
 # Display the table
 st.table(df)
